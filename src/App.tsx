@@ -1,3 +1,5 @@
+import Home from "./pages/Home";
+
 function App() {
   return (
     <div
@@ -11,6 +13,7 @@ function App() {
         <div className="star"></div>
         <div id="stars"></div>
       </div>
+      <Home />
     </div>
   );
 }

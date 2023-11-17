@@ -14,6 +14,8 @@ body {
     transform: rotateZ(45deg);
 }
 
+/* FALLING STARTS CSS */
+
 .star {
     position: absolute;
     left: 50%;
@@ -25,8 +27,6 @@ body {
     filter: drop-shadow(0 0 6px #699BFF);
     animation: tail 3s ease-in-out infinite, falling 3s ease-in-out infinite
 }
-
-
 
 
 .star::before, .star::after{
@@ -522,3 +522,97 @@ body {
       transform: translateY(-2000px);
     }
   }
+
+  /* CSS FOR WELCOME HEADING ON HOME */
+
+  #home__welcome {
+    animation: heading-welcome-enter 2s ease-in-out, glow 1s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 20px #2d9da9;
+    }
+    to {
+      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+    }
+  }
+
+  @keyframes heading-welcome-enter {
+    0%{
+
+        opacity: 0;
+    }
+
+    100%{
+        top: 0%;
+
+    }
+  }
+
+
+  /* CSS for info */
+
+  #home__info-1 {
+    margin-top: 100px;
+    opacity: 0;
+    animation: home-info-1-enter 1s 1s ease-in-out forwards;
+    transition: all .1s;
+  }
+
+  #home__info-2{
+    opacity: 0;
+    animation: home-info-2-enter 1s 2s ease-in-out forwards;
+    transition: all .1s;
+  }
+
+  #home__info-3{
+    opacity: 0;
+    animation: home-info-3-enter 1s 3s ease-in-out forwards;
+    transition: all .1s;
+  }
+
+  #home__info-3 > span {
+    background: #2d9da9;
+    color: #000;
+    box-shadow: 0 0 20px #2d9da9;
+ 
+    font-weight: 600;
+  
+  }
+
+  @keyframes home-info-1-enter {
+    0% {
+        margin-top: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+  }
+
+  @keyframes home-info-2-enter {
+    0% {
+        margin-top: 100px;
+        opacity: 0;
+    }
+
+    100% {
+        margin-top: 0;
+        opacity: 1;
+    }
+  }
+
+  @keyframes home-info-3-enter {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1; 
+    }
+  }
+
+
