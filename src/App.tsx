@@ -1,3 +1,4 @@
+import Header from "./layouts/Header";
 import Home from "./pages/Home";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <div className="star"></div>
         <div id="stars"></div>
       </div>
+      <Header />
       <Home />
     </div>
   );

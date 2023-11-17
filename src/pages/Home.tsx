@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
+import NavrajHome from "../assets/navraj.jpeg";
 
 const Home: React.FC = () => {
   const ref1 = useRef(null);
@@ -19,7 +20,9 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div id="home" className="text-[#fff] absolute left-[5%] top-[15%] ">
+    <div
+      id="home"
+      className="text-[#fff] absolute left-[5%] top-[25%] w-[100%]">
       <h1
         id="home__welcome"
         className="text-[5.5rem] text-color-home-welcome tracking-[5px] font-titan-one">
@@ -50,6 +53,12 @@ const Home: React.FC = () => {
           <span ref={ref1}></span>
         </p>
       </div>
+      {/* <img
+        id="home__image"
+        src={NavrajHome}
+        width="300px"
+        className="absolute top-[10%] right-[15%]"
+      /> */}
     </div>
   );
 };
