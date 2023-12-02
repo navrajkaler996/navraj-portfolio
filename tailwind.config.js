@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: (theme) => ({
-        "radial-gradient": "radial-gradient(ellipse at bottom, #0D1E31, #000)",
+        "radial-gradient": "radial-gradient(ellipse at center, #0D1E31, #000)",
       }),
       fontFamily: {
         "titan-one": ["Titan One", "sans-serif"],

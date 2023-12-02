@@ -3,15 +3,18 @@
 @tailwind utilities;
 
 body {
-        overflow: hidden;
+        /* overflow: hidden; */
+        max-width: 100%;
+        overflow-x: hidden;
 }
 
 .dark {
 
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
-    height: 100%;
-    transform: rotateZ(45deg);
+    /* min-height: 100vh; */
+    height: auto;
+    /* transform: rotateZ(45deg); */
 }
 
 /* FALLING STARTS CSS */
@@ -327,7 +330,7 @@ body {
       696px 1654px #fff, 1144px 60px #fff;
   }
   
-  #stars:after {
+  /* #stars:after {
     content: '';
     position: absolute;
     top: 2000px;
@@ -511,7 +514,7 @@ body {
     1335px 872px #fff, 1647px 1298px #fff, 1233px 1387px #fff, 698px 1036px #fff,
     659px 1860px #fff, 388px 1412px #fff, 1212px 458px #fff, 755px 1468px #fff,
     696px 1654px #fff, 1144px 60px #fff;
-  }
+  } */
 
   @keyframes animStar {
     
@@ -526,15 +529,15 @@ body {
   /* CSS FOR WELCOME HEADING ON HOME */
 
   #home__welcome {
-    animation: heading-welcome-enter 2s ease-in-out, glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
   }
 
   @keyframes glow {
     from {
-      text-shadow: 0 0 20px #2d9da9;
+      text-shadow: 0 0 10px #2d9da9;
     }
     to {
-      text-shadow: 0 0 30px #34b3c1, 0 0 10px #4dbbc7;
+      text-shadow: 0 0 20px #34b3c1
     }
   }
 
@@ -572,7 +575,7 @@ body {
     transition: all .1s;
   }
 
-  #home__info-3 > span {
+  .blue-background {
     background: #2d9da9;
     color: #000;
     box-shadow: 0 0 20px #2d9da9;
@@ -583,7 +586,7 @@ body {
 
   @keyframes home-info-1-enter {
     0% {
-        margin-top: 100px;
+        margin-top: 50px;
         opacity: 0;
     }
 
@@ -595,7 +598,7 @@ body {
 
   @keyframes home-info-2-enter {
     0% {
-        margin-top: 100px;
+        margin-top: 40px;
         opacity: 0;
     }
 
@@ -624,3 +627,174 @@ body {
   }
 
   
+
+  .vanish {
+    opacity: 1;
+    animation: home-leaves 2s forwards;
+  }
+
+  @keyframes home-leaves {
+
+    0% {
+       transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(70%);
+        opacity: 0;
+        display: none;
+    }
+  }
+
+
+  #next-button{
+    box-shadow: 0 0 12px #34b3c1, 0 0 3px #4dbbc7;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    animation: next-arrow-glow 2s infinite ease-in-out;
+    transition: all .5s;
+  }
+
+  #next-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 50px #34b3c1, 0 0 30px #4dbbc7;
+    animation: none;
+    width: 200px;
+    border-radius: 50px;
+  }
+
+  #next-button span {
+    visibility: hidden;
+    opacity: 0; /* added opacity to control the fade effect */
+    transition: all 1s; /* added transition for visibility and opacity */
+  }
+  
+  #next-button:hover > span {
+    visibility: visible;
+    opacity: 1; /* make the span fully visible on hover */
+  }
+
+  #next-button:not(:hover) > span {
+    transition-duration: 0.2s; /* shorter transition duration when not in hover state */
+  }
+ 
+  .arrow {
+    border: solid #34b3c1;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 12px;
+    position: absolute;
+    top: 35px;
+    left: 30px;
+  
+
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  @keyframes next-arrow-glow {
+
+    0% {
+		transform: scale(0.9);
+		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7); */
+	}
+
+	70% {
+		transform: scale(1);
+		/* box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); */
+	}
+
+	100% {
+		transform: scale(0.9);
+		/* box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); */
+	}
+  }
+
+  /*CSS FOR ABOUT*/
+
+  #about{
+
+    opacity: 1;
+
+    
+
+  }
+
+  #skills {
+    /* opacity: 0; */
+  }
+
+  #experience {
+    /* opacity: 0; */
+  }
+
+  @keyframes about-enters {
+
+    0%{
+      opacity: 0;
+
+    
+    }
+
+    100%{
+      opacity: 100%;
+   
+
+    }
+    
+  }
+
+  .appear-home {
+    animation: about-enters 2s ease-in-out forwards;
+  }
+
+
+  .appear {
+ 
+    animation: about-enters 2s 2s ease-in-out forwards;
+  }
+
+  .vanish-about {
+
+    animation: about-leaves 3s  ease-in-out  forwards;
+  }
+
+  @keyframes about-leaves {
+
+    0% {
+      opacity: 1;
+       transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(100%);
+        opacity: 0;
+        display: none;
+    }
+  }
+
+
+  /* EXPERIENCE */
+
+  .active-experience{
+    /* letter-spacing: 4px; */
+  }
+
+  /* CONTACT */
+
+  #contact {
+    /* opacity: 0; */
+  }
+  #contact__info img{
+    width: 50px;
+  }
+
+
+
+  .active-link {
+    border-bottom: 1px solid #fff;
+  }

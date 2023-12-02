@@ -1,9 +1,22 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
-import NavrajHome from "../assets/navraj.jpeg";
+import { motion, useAnimation, useInView } from "framer-motion";
 
-const Home: React.FC = () => {
+interface HomeType {
+  active: string;
+}
+
+const Home: React.FC<HomeType> = ({ active }) => {
   const ref1 = useRef(null);
+  const homeRef = useRef(null);
+
+  const isInView = useInView(homeRef, { once: false });
+
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) mainControls.start("visible");
+  }, [isInView]);
 
   //useEffect for Typed
   useEffect(() => {
@@ -20,9 +33,17 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div
+    <motion.div
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      initial="hidden"
+      animate={mainControls}
+      transition={{ duration: 1, delay: 0.3 }}
+      ref={homeRef}
       id="home"
-      className="text-[#fff] absolute left-[5%] top-[25%] w-[100%]">
+      className="text-[#fff] w-[100%]">
       <h1
         id="home__welcome"
         className="text-[5.5rem] text-color-home-welcome tracking-[5px] font-titan-one">
@@ -36,30 +57,24 @@ const Home: React.FC = () => {
       </h1>
       <div id="home__info-container">
         <p
-          id="home__info-1"
+          // id="home__info-1"
           className="font-cuprum text-[2.5rem] tracking-[3px]">
           My name is navraj singh kaler
         </p>
         <p
-          id="home__info-2"
+          // id="home__info-2"
           className="font-cuprum text-[2.5rem] tracking-[3px]">
           I am a full-stack web developer
         </p>
         <p
-          id="home__info-3"
+          // id="home__info-3"
           className="font-cuprum text-[2.5rem] tracking-[3px]">
           {" "}
           I work with&nbsp;
-          <span ref={ref1}></span>
+          <span className="blue-background" ref={ref1}></span>
         </p>
       </div>
-      {/* <img
-        id="home__image"
-        src={NavrajHome}
-        width="300px"
-        className="absolute top-[10%] right-[15%]"
-      /> */}
-    </div>
+    </motion.div>
   );
 };
 
