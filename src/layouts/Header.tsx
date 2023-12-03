@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import scrollIntoView from "scroll-into-view";
 //border-[#3c3b3b]
 const headerScroll = {
   "margin-top": 0,
@@ -55,6 +56,30 @@ const Header: React.FC<HeaderType> = ({ active, clickHandler }) => {
     if (activeLink !== active) setActiveLink(active);
   }, [active]);
 
+  // useEffect(() => {
+  //   const activeNavLink = document.getElementById(activeLink);
+
+  //   activeNavLink?.classList.add("active-link");
+  // }, []);
+
+  const navigate = (id: string) => {
+    setActiveLink(id);
+    const element = document.getElementById(`${id}__holder`);
+    const activeNavLink = document.getElementById(activeLink);
+
+    activeNavLink?.classList.remove("active-link");
+    const newActiveNavLink = document.getElementById(id);
+
+    if (element) {
+      newActiveNavLink?.classList.add("active-link");
+      scrollIntoView(element, {
+        time: 2000,
+      });
+    }
+
+    setActiveLink(id);
+  };
+
   return (
     <>
       {/* <div
@@ -80,32 +105,32 @@ const Header: React.FC<HeaderType> = ({ active, clickHandler }) => {
           className="h-[inherit] grid grid-cols-5 uppercase font-cuprum tracking-[2px] sm:text-[1rem] text-[.6em] text-[#7b7b7b]">
           <li
             id="home"
-            onClick={(e) => clickHandler(e.currentTarget.id)}
+            onClick={(e) => navigate(e.currentTarget.id)}
             className="nav-link hover:cursor-pointer text-white transition-all text-center z-10 leading-[4rem]">
             Home
           </li>
 
           <li
             id="about"
-            onClick={(e) => clickHandler(e.currentTarget.id)}
+            onClick={(e) => navigate(e.currentTarget.id)}
             className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
             About
           </li>
           <li
             id="skills"
-            onClick={(e) => clickHandler(e.currentTarget.id)}
+            onClick={(e) => navigate(e.currentTarget.id)}
             className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
             Skills
           </li>
           <li
             id="experience"
-            onClick={(e) => clickHandler(e.currentTarget.id)}
+            onClick={(e) => navigate(e.currentTarget.id)}
             className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
             Experience
           </li>
           <li
             id="contact"
-            onClick={(e) => clickHandler(e.currentTarget.id)}
+            onClick={(e) => navigate(e.currentTarget.id)}
             className="nav-link hover:cursor-pointer hover:text-white transition-all text-center z-10 leading-[4rem]">
             Contact
           </li>

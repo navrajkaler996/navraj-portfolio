@@ -72,12 +72,13 @@ function App() {
           <Home />
         </div>
         <div id="about__holder" className="sm:px-[4rem] px-[1rem]">
-          <About />
           <span ref={aboutRef}></span>
+          <About />
         </div>
+
         <div id="skills__holder" className="mt-[6rem]  sm:px-[4rem] px-[1rem]">
-          <Skills />
           <span ref={skillsRef}></span>
+          <Skills />
         </div>
         <div
           id="experience__holder"
