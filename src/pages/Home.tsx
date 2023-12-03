@@ -74,7 +74,7 @@ const Home: React.FC = () => {
           className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center  tracking-[3px] sm:mb-0 mb-[1rem]">
           {" "}
           I work with&nbsp;
-          <span className="blue-background" ref={ref1}></span>
+          <span className="blue-background z-0" ref={ref1}></span>
         </p>
       </div>
     </motion.div>

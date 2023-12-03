@@ -590,6 +590,15 @@ body {
   
   }
 
+  .blue-background-2 {
+    background: #2d9da9;
+    color: #000;
+    /* box-shadow: 0 0 20px #2d9da9; */
+ 
+    font-weight: 600;
+  
+  }
+
   @keyframes home-info-1-enter {
     0% {
         margin-top: 50px;

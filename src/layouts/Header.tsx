@@ -11,6 +11,7 @@ interface HeaderType {
 
 const Header: React.FC<HeaderType> = ({ active, clickHandler }) => {
   const [activeLink, setActiveLink] = useState("home");
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     window.onscroll = () => {
@@ -55,45 +56,62 @@ const Header: React.FC<HeaderType> = ({ active, clickHandler }) => {
   }, [active]);
 
   return (
-    <div
-      id="header"
-      className="fixed w-[100vw] h-[4rem] mx-auto mt-[2rem] z-[1000] ">
-      <ul
-        id="nav-links"
-        className=" h-[inherit] grid grid-cols-5 uppercase font-cuprum tracking-[2px] text-[#7b7b7b]">
-        <li
-          id="home"
-          onClick={(e) => clickHandler(e.currentTarget.id)}
-          className="nav-link hover:cursor-pointer text-white transition-all text-center z-10 leading-[4rem]">
-          Home
-        </li>
+    <>
+      {/* <div
+        id="hamburger"
+        className="sm:hidden block fixed top-[1rem] right-[2rem] w-[5rem] h-[5rem] rounded-[50%] blue-background">
+        <div
+          className="flex flex-col justify-center items-center h-[100%]"
+          onClick={() => setShowMenu(!showMenu)}>
+          <div className="w-[60%] h-[1px] bg-black my-[5px]"></div>
 
-        <li
-          id="about"
-          onClick={(e) => clickHandler(e.currentTarget.id)}
-          className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
-          About
-        </li>
-        <li
-          id="skills"
-          onClick={(e) => clickHandler(e.currentTarget.id)}
-          className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
-          Skills
-        </li>
-        <li
-          id="experience"
-          onClick={(e) => clickHandler(e.currentTarget.id)}
-          className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
-          Experience
-        </li>
-        <li
-          id="contact"
-          onClick={(e) => clickHandler(e.currentTarget.id)}
-          className="nav-link hover:cursor-pointer hover:text-white transition-all text-center z-10 leading-[4rem]">
-          Contact
-        </li>
-      </ul>
-    </div>
+          <div className="w-[60%] h-[1px] bg-black my-[5px]"></div>
+          <div className="w-[60%] h-[1px] bg-black my-[5px]"></div>
+        </div>
+        {showMenu && (
+          <div className="absolute top-[6rem] right-[0rem] w-[15rem] h-[20rem] blue-background-2 z-[1200]"></div>
+        )}
+      </div> */}
+      <div
+        id="header"
+        className="fixed w-[100vw] h-[4rem] mx-auto mt-[2rem] z-[1000] ">
+        <ul
+          id="nav-links"
+          className="h-[inherit] grid grid-cols-5 uppercase font-cuprum tracking-[2px] sm:text-[1rem] text-[.6em] text-[#7b7b7b]">
+          <li
+            id="home"
+            onClick={(e) => clickHandler(e.currentTarget.id)}
+            className="nav-link hover:cursor-pointer text-white transition-all text-center z-10 leading-[4rem]">
+            Home
+          </li>
+
+          <li
+            id="about"
+            onClick={(e) => clickHandler(e.currentTarget.id)}
+            className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
+            About
+          </li>
+          <li
+            id="skills"
+            onClick={(e) => clickHandler(e.currentTarget.id)}
+            className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
+            Skills
+          </li>
+          <li
+            id="experience"
+            onClick={(e) => clickHandler(e.currentTarget.id)}
+            className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
+            Experience
+          </li>
+          <li
+            id="contact"
+            onClick={(e) => clickHandler(e.currentTarget.id)}
+            className="nav-link hover:cursor-pointer hover:text-white transition-all text-center z-10 leading-[4rem]">
+            Contact
+          </li>
+        </ul>
+      </div>
+    </>
   );
 };
 
