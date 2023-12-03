@@ -1,3 +1,6 @@
+import { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 import HTML5 from "../assets/html-5.png";
 import CSS3 from "../assets/css-3.png";
 import JavaScript from "../assets/js.png";
@@ -16,14 +19,8 @@ import Mongoose from "../assets/mongoose.png";
 import Nest from "../assets/nest.png";
 import Express from "../assets/express.png";
 import Prisma from "../assets/prisma.png";
-import { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
 
-interface SkillsType {
-  leave: string;
-}
-
-const Skills: React.FC<SkillsType> = ({ leave }) => {
+const Skills: React.FC = () => {
   const skillsRef = useRef(null);
 
   const isInView = useInView(skillsRef, { once: false });
@@ -109,20 +106,21 @@ const Skills: React.FC<SkillsType> = ({ leave }) => {
             <p>MongoDB</p>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Nest} className="w-[60px] h-[60px] mb-4" />
-            <p>Nest.js</p>
-          </div>
-          <div className="flex flex-col items-center">
             <img src={Express} className="w-[60px] h-[60px] mb-4" />
             <p>Express.js</p>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Mongoose} className="w-[60px] h-[60px] mb-4" />
-            <p>Mongoose</p>
+            <img src={Nest} className="w-[60px] h-[60px] mb-4" />
+            <p>Nest.js</p>
           </div>
           <div className="flex flex-col items-center">
             <img src={Prisma} className="w-[60px] h-[60px] mb-4" />
             <p>Prisma</p>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <img src={Mongoose} className="w-[60px] h-[60px] mb-4" />
+            <p>Mongoose</p>
           </div>
         </div>
       </div>

@@ -1,19 +1,17 @@
 import { useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
+
 import Header from "./layouts/Header";
+
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
-import { useInView } from "framer-motion";
-
-const VIEW = ["home", "about", "skills", "experience", "contact"];
+import Footer from "./layouts/Footer";
 
 function App() {
   const [active, setActive] = useState("home");
-  const [navClicked, setNavClicked] = useState(false);
-  // const [next, setNext] = useState(VIEW[0]);
-  // const [viewIndex, setViewIndex] = useState(0);
 
   const homeRef = useRef(null);
   const aboutRef = useRef(null);
@@ -42,13 +40,11 @@ function App() {
     isSkillsInView,
     isExperienceInView,
     isContactInView,
-    navClicked,
   ]);
 
   const navClickHandler = (id: string) => {
     const targetElement = document.getElementById(`${id}__holder`);
     setActive(id);
-    setNavClicked(true);
     if (targetElement) {
       targetElement.scrollIntoView({ behavior: "smooth" });
     } else {
@@ -73,39 +69,41 @@ function App() {
           id="home__holder"
           className="h-[100vh] pt-[10rem] pl-[5rem]"
           ref={homeRef}>
-          <Home active={active} />
+          <Home />
         </div>
         <div id="about__holder" className="px-[4rem]">
-          <About leave={active} />
+          <About />
           <span ref={aboutRef}></span>
         </div>
         <div id="skills__holder" className="mt-[6rem]  px-[4rem]">
-          <Skills leave={active} />
+          <Skills />
           <span ref={skillsRef}></span>
         </div>
         <div id="experience__holder" className="mt-[6rem]  px-[4rem]">
-          <Experience leave={active} />
+          <Experience />
           <span ref={experienceRef}></span>
         </div>
 
         <div id="contact__holder" className="mt-[6rem]  px-[4rem]">
-          <Contact leave={active} />
+          <Contact />
           <span ref={contactRef}></span>
         </div>
+        <Footer />
         <div id="stars"></div>
       </div>
+
       {/* <div id="about__holder">
-        <About leave={active} />
+        <About  />
       </div>
       <div id="skills__holder">
-        <Skills leave={active} />
+        <Skills  />
       </div>
       <div id="experience__holder">
-        <Experience leave={active} />
+        <Experience  />
       </div>
 
       <div id="contact__holder">
-        <Contact leave={active} />
+        <Contact  />
       </div> */}
       {/* <div
         id="next-button"

@@ -2,11 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-interface HomeType {
-  active: string;
-}
-
-const Home: React.FC<HomeType> = ({ active }) => {
+const Home: React.FC = () => {
   const ref1 = useRef(null);
   const homeRef = useRef(null);
 
@@ -21,7 +17,14 @@ const Home: React.FC<HomeType> = ({ active }) => {
   //useEffect for Typed
   useEffect(() => {
     const typed = new Typed(ref1.current, {
-      strings: ["React.js", "Node.js", "MongoDB", "Next.js", "Sass/Less"],
+      strings: [
+        "React.js",
+        "Node.js",
+        "Tailwind",
+        "Sass/Less",
+        "PostgreSQL",
+        "MongoDB",
+      ],
       typeSpeed: 50,
       backSpeed: 40,
       loop: true,

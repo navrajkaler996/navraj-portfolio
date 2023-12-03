@@ -1,28 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
-interface ExperienceType {
-  leave: string;
-}
 
 const EXPERIENCE = [
   {
     company: "infosys",
     description:
-      "After completing my 4 months training at Infosys educational center in Mysore, I joined the organization as a MERN stack web developer. I joined my first project as React.js developer. We built a web application for a mortage company from scratch. After working on frontend for six months using React.js, Redux, Redux saga, and styled-components, I transitioned on server-side development as well. Though my role was limited, I got positibe exposure to Java microservices, and MySQL database.",
+      "After finishing my 4-month training at Infosys Educational Center in Mysore, I started working there as a MERN stack web developer. In my initial role, I focused on React.js development and took part in creating a web application for a mortgage company. Working on the front end for six months, I used technologies like React.js, Redux, Redux Saga, and styled-components. Later, I expanded my skills to server-side development. Even though my main focus was on frontend development, I gained positive exposure to Java microservices and MySQL databases during this transition.",
   },
   {
     company: "bacancy",
     description:
-      "After completing my 4 months training at Infosys educational center in Mysore, I joined the organization as a MERN stack web developer. I joined my first project as React.js developer. We built a web application for a mortage company from scratch. After working on frontend for six months using React.js, Redux, Redux saga, and styled-components, I transitioned on server-side development as well. Though my role was limited, I got positibe exposure to Java microservices, and MySQL database.",
+      "I joined Bacancy Technology as a software developer, where I played the role of a full-stack developer. My responsibilities included working with technologies such as React, Redux, Sass, Node.js, Express, and MySQL. I effectively communicated with clients on a daily basis, managing multiple projects simultaneously.",
   },
   {
     company: "telus_international",
     description:
-      "After completing my 4 months training at Infosys educational center in Mysore, I joined the organization as a MERN stack web developer. I joined my first project as React.js developer. We built a web application for a mortage company from scratch. After working on frontend for six months using React.js, Redux, Redux saga, and styled-components, I transitioned on server-side development as well. Though my role was limited, I got positibe exposure to Java microservices, and MySQL database.",
+      "I joined Telus International as a Senior Application Developer, leading the inception of a web application using React, Redux, Tailwind CSS, Express, and PostgreSQL. Collaborating with multiple development teams, our primary focus was on designing an admin dashboard supporting users with distinct roles and integrating multiple databases. Over the course of nearly 10 months, we successfully completed two phases of the project.",
   },
 ];
 
-const Experience: React.FC<ExperienceType> = ({ leave }) => {
+const Experience: React.FC = () => {
   const [activeExperience, setActiveExperience] = useState("infosys");
   const experienceRef = useRef(null);
 
@@ -95,7 +92,7 @@ const Experience: React.FC<ExperienceType> = ({ leave }) => {
             <p>Telus International, India</p>
           </div>
         </div>
-        <div className="normal-case lg:mt-[6rem] mt-[4rem]">
+        <div className="lg:w-[80%] md:w-[80%] w-[100%] normal-case lg:mt-[6rem] mt-[4rem]">
           <p>
             {EXPERIENCE.map(
               (exp) => exp.company === activeExperience && exp.description

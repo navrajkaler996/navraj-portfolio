@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
-interface AboutType {
-  leave: string;
-}
-
-const About: React.FC<AboutType> = ({ leave }) => {
+const About: React.FC = () => {
   const aboutRef = useRef(null);
 
   const isInView = useInView(aboutRef, { once: false });
@@ -62,27 +58,33 @@ const About: React.FC<AboutType> = ({ leave }) => {
 
         <div className="font-cuprum text-white text-[1.2em] lg:mt-0 mt-[3rem] ">
           <p className="mb-2">
-            Hey there! My name is Navraj Singh Kaler and I am a full-stack web
-            developer.
+            Hello! I'm Navraj Singh Kaler, a full-stack web developer. I hold a
+            bachelor's degree in Computer Science and a post-graduate diploma in
+            web development. With over three years of experience in web
+            development, I initially began my journey as a frontend developer,
+            specializing in React.js.
           </p>
           <p className="mb-2">
-            I have a bachelor's degree in Computer science and a post-graduate
-            diploma in web development. I have over three years of experience in
-            web development. I started my career as a frontend developer using
-            React.js. I have used different libraries and frameworks with React
-            in this time such as Redux, TailwindCSS, styled-components, and
-            more.
+            Throughout my career, I've worked extensively with various libraries
+            and frameworks alongside React, including Redux, TailwindCSS,
+            styled-components, and more. My proficiency extends to backend
+            development, where I primarily use Node.js with frameworks like
+            Express.js and Fastify.
           </p>
           <p className="mb-2">
             {" "}
-            I started my career as a frontend developer using React.js. I have
-            used different libraries and frameworks with React in this time such
-            as Redux, TailwindCSS, styled-components, and more.
+            In database management, I have experience with both SQL databases
+            like PostgreSQL and NoSQL databases such as MongoDB. My diverse
+            skill set allows me to contribute effectively to both frontend and
+            backend aspects of web development.
           </p>
-          <p>
-            I have primarly used Node.js in backend development with frameworks
-            such as Express.js and Fastify. I have used SQL dataases such as
-            POSTgresql and NoSQL databases such as MongoDD.
+          <p className="mb-2">
+            love learning and always want to know more. Keeping up with the
+            changing tech world is exciting for me. I'm keen to explore new
+            things like DevOps, advanced data skills, and making mobile apps. I
+            believe in always learning because tech is always moving forward. I
+            want to stay updated and make sure I can adapt quickly in the
+            fast-paced world of web development.
           </p>
         </div>
       </div>
