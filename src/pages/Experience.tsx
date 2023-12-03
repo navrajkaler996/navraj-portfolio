@@ -62,15 +62,15 @@ const Experience: React.FC = () => {
       ref={experienceRef}
       id="experience"
       className="text-[#fff]  w-[100%] font-cuprum">
-      <p className="font-cuprum text-[2rem] uppercase text-center mb-[6rem]">
+      <p className="font-cuprum text-[2rem] uppercase text-center sm:mb-[6rem] mb-[3rem]">
         My experience
       </p>
       <div className="flex flex-col justify-around items-center capitalize tracking-[2px] ">
-        <div className="w-[100%] flex justify-between lg:text-[1em] md:text-[0.8em] text-[.6em] gap-6">
+        <div className="sm:w-[100%] w-[60%] flex sm:flex-row flex-col justify-between sm:text-[1rem] text-[.8rem] gap-6">
           <div
             id="infosys"
             onClick={(e) => changeHandler(e.currentTarget.id)}
-            className="border-b py-3 px-3  hover:cursor-pointer transition-all blue-background">
+            className="border-b py-3 px-3  hover:cursor-pointer transition-all blue-background sm:text-left text-center">
             <p>System engineer </p>
             <p>Aug 2019 - Sep 2021</p>
             <p>Infosys, India</p>
@@ -78,7 +78,7 @@ const Experience: React.FC = () => {
           <div
             id="bacancy"
             onClick={(e) => changeHandler(e.currentTarget.id)}
-            className="border-b py-3 px-3  hover:cursor-pointer transition-all">
+            className="border-b py-3 px-3  hover:cursor-pointer transition-all sm:text-left text-center">
             <p>Software engineer </p>
             <p>Sep 2021 - Apr 2022</p>
             <p>Bacancy, India</p>
@@ -86,13 +86,13 @@ const Experience: React.FC = () => {
           <div
             id="telus_international"
             onClick={(e) => changeHandler(e.currentTarget.id)}
-            className="border-b py-3 px-3 hover:cursor-pointer transition-all">
+            className="border-b py-3 px-3 hover:cursor-pointer transition-all sm:text-left text-center">
             <p>Senior software developer </p>
             <p>Apr 2022 - Dec 2022</p>
             <p>Telus International, India</p>
           </div>
         </div>
-        <div className="lg:w-[80%] md:w-[80%] w-[100%] normal-case lg:mt-[6rem] mt-[4rem]">
+        <div className="lg:w-[80%] md:w-[80%] w-[100%] sm:text-[1.2rem] text-[1rem] normal-case lg:mt-[6rem] mt-[4rem]  sm:text-left text-center">
           <p>
             {EXPERIENCE.map(
               (exp) => exp.company === activeExperience && exp.description

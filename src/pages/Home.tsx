@@ -49,7 +49,7 @@ const Home: React.FC = () => {
       className="text-[#fff] w-[100%]">
       <h1
         id="home__welcome"
-        className="text-[5.5rem] text-color-home-welcome tracking-[5px] font-titan-one">
+        className="sm:text-[5.5rem] text-[3.5rem] sm:text-left text-center text-color-home-welcome tracking-[5px] font-titan-one">
         <span className="one">W</span>
         <span className="two">E</span>
         <span className="three">L</span>
@@ -58,20 +58,20 @@ const Home: React.FC = () => {
         <span className="six">M</span>
         <span className="seven">E</span>
       </h1>
-      <div id="home__info-container">
+      <div id="home__info-container" className="sm:mt-0 mt-[3rem]">
         <p
           // id="home__info-1"
-          className="font-cuprum text-[2.5rem] tracking-[3px]">
+          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center tracking-[3px] sm:mb-0 mb-[1rem]">
           My name is navraj singh kaler
         </p>
         <p
           // id="home__info-2"
-          className="font-cuprum text-[2.5rem] tracking-[3px]">
+          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center  tracking-[3px] sm:mb-0 mb-[1rem]">
           I am a full-stack web developer
         </p>
         <p
           // id="home__info-3"
-          className="font-cuprum text-[2.5rem] tracking-[3px]">
+          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center  tracking-[3px] sm:mb-0 mb-[1rem]">
           {" "}
           I work with&nbsp;
           <span className="blue-background" ref={ref1}></span>

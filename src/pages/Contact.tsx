@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
       className="text-[#fff]">
       <Toaster />
       <div className="font-cuprum tracking-[3px] lowercase">
-        <p className="font-cuprum text-[2rem] uppercase text-center mb-[6rem]">
+        <p className="font-cuprum text-[2rem] uppercase text-center sm:mb-[6rem] mb-[3rem]">
           Say hi to me!
         </p>
         <div className="grid lg:grid-rows-1 lg:grid-cols-2 grid-rows-2 grid-cols-1 lg:gap-[6rem] gap-[0]">

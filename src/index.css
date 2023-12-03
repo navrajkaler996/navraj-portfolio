@@ -8,6 +8,12 @@ body {
         overflow-x: hidden;
 }
 
+@media (max-width: 640px) {
+  #app {
+      width: fit-content;
+  }
+}
+
 .dark {
 
     /* position: absolute; */

@@ -42,7 +42,7 @@ const Skills: React.FC = () => {
       ref={skillsRef}
       id="skills"
       className="text-[#fff] w-[100%] font-cuprum">
-      <p className="font-cuprum text-[2rem] uppercase text-center mb-[6rem]">
+      <p className="font-cuprum text-[2rem] uppercase text-center sm:mb-[6rem] mb-[3rem]">
         skills
       </p>
       <div className="flex lg:flex-row md:flex-col sm:flex-col flex-col sm:items-center justify-around uppercase tracking-[1px]">

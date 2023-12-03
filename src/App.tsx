@@ -67,24 +67,26 @@ function App() {
         <Header active={active} clickHandler={navClickHandler} />
         <div
           id="home__holder"
-          className="h-[100vh] pt-[10rem] pl-[5rem]"
+          className="h-[100vh] pt-[10rem] lg:pl-[5rem] md:pl-[5rem]"
           ref={homeRef}>
           <Home />
         </div>
-        <div id="about__holder" className="px-[4rem]">
+        <div id="about__holder" className="sm:px-[4rem] px-[1rem]">
           <About />
           <span ref={aboutRef}></span>
         </div>
-        <div id="skills__holder" className="mt-[6rem]  px-[4rem]">
+        <div id="skills__holder" className="mt-[6rem]  sm:px-[4rem] px-[1rem]">
           <Skills />
           <span ref={skillsRef}></span>
         </div>
-        <div id="experience__holder" className="mt-[6rem]  px-[4rem]">
+        <div
+          id="experience__holder"
+          className="mt-[6rem]  sm:px-[4rem] px-[1rem]">
           <Experience />
           <span ref={experienceRef}></span>
         </div>
 
-        <div id="contact__holder" className="mt-[6rem]  px-[4rem]">
+        <div id="contact__holder" className="mt-[6rem]  sm:px-[4rem] px-[1rem]">
           <Contact />
           <span ref={contactRef}></span>
         </div>
