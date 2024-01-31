@@ -9,6 +9,7 @@ import Skills from "./pages/Skills";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Footer from "./layouts/Footer";
+import Projects from "./pages/Projects";
 
 function App() {
   const [active, setActive] = useState("home");
@@ -18,11 +19,13 @@ function App() {
   const skillsRef = useRef(null);
   const experienceRef = useRef(null);
   const contactRef = useRef(null);
+  const projectsRef = useRef(null);
 
   const isHomeInView = useInView(homeRef, {});
   const isAboutInView = useInView(aboutRef, {});
   const isSkillsInView = useInView(skillsRef, {});
   const isExperienceInView = useInView(experienceRef, {});
+  const isProjectsInView = useInView(projectsRef, {});
   const isContactInView = useInView(contactRef, {});
 
   useEffect(() => {
@@ -31,15 +34,14 @@ function App() {
     if (isSkillsInView) setActive("skills");
     if (isExperienceInView) setActive("experience");
     if (isContactInView) setActive("contact");
-
-    console.log(isHomeInView);
-    console.log(isExperienceInView);
+    if (isProjectsInView) setActive("projects");
   }, [
     isHomeInView,
     isAboutInView,
     isSkillsInView,
     isExperienceInView,
     isContactInView,
+    isProjectsInView,
   ]);
 
   const navClickHandler = (id: string) => {
@@ -85,6 +87,13 @@ function App() {
           className="mt-[6rem]  sm:px-[4rem] px-[1rem]">
           <Experience />
           <span ref={experienceRef}></span>
+        </div>
+        <div
+          id="projects__holder"
+          className="mt-[6rem]  sm:px-[4rem] px-[1rem]"
+          ref={projectsRef}>
+          <Projects />
+          {/* <span ref={projectsRef}></span> */}
         </div>
 
         <div id="contact__holder" className="mt-[6rem]  sm:px-[4rem] px-[1rem]">

@@ -102,7 +102,7 @@ const Header: React.FC<HeaderType> = ({ active, clickHandler }) => {
         className="fixed w-[100vw] h-[4rem] mx-auto mt-[2rem] z-[1000] ">
         <ul
           id="nav-links"
-          className="h-[inherit] grid grid-cols-5 uppercase font-cuprum tracking-[2px] sm:text-[1rem] text-[.6em] text-[#7b7b7b]">
+          className="h-[inherit] grid grid-cols-6 uppercase font-cuprum tracking-[2px] sm:text-[1rem] text-[.6em] text-[#7b7b7b]">
           <li
             id="home"
             onClick={(e) => navigate(e.currentTarget.id)}
@@ -127,6 +127,12 @@ const Header: React.FC<HeaderType> = ({ active, clickHandler }) => {
             onClick={(e) => navigate(e.currentTarget.id)}
             className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
             Experience
+          </li>
+          <li
+            id="projects"
+            onClick={(e) => navigate(e.currentTarget.id)}
+            className="nav-link hover:cursor-pointer hover:text-white  transition-all text-center z-10 leading-[4rem]">
+            Projects
           </li>
           <li
             id="contact"

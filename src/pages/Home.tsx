@@ -61,17 +61,17 @@ const Home: React.FC = () => {
       <div id="home__info-container" className="sm:mt-0 mt-[3rem]">
         <p
           // id="home__info-1"
-          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center tracking-[3px] sm:mb-0 mb-[1rem]">
+          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] text-left tracking-[3px] sm:mb-0 mb-[1rem] ml-[1rem] sm:ml-0">
           My name is navraj singh kaler
         </p>
         <p
           // id="home__info-2"
-          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center  tracking-[3px] sm:mb-0 mb-[1rem]">
+          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] text-left tracking-[3px] sm:mb-0 mb-[1rem] ml-[1rem] sm:ml-0">
           I am a full-stack web developer
         </p>
         <p
           // id="home__info-3"
-          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] sm:text-left text-center  tracking-[3px] sm:mb-0 mb-[1rem]">
+          className="font-cuprum sm:text-[2.5rem] text-[1.5rem] text-left tracking-[3px] sm:mb-0 mb-[1rem] ml-[1rem] sm:ml-0">
           {" "}
           I work with&nbsp;
           <span className="blue-background z-0" ref={ref1}></span>
