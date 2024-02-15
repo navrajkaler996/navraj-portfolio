@@ -40,8 +40,11 @@ const Projects: React.FC = () => {
             Prime inventory pro is an inventory management software that manages
             the inventory of a hypothetical chain of stores in Winnipeg named,
             PrimeMart. <br />
-            React 18 is used on the frontend with Redux toolkit for
-            state management. Throughout the frontend, several custom react and 
+            React 18 is used on the frontend with Redux toolkit for state
+            management. Throughout the frontend, several custom and in-built
+            react hooks are used along with TailwindCSS for presentation. In the
+            backend, NestJS wih Prisma ORM is used while data is being stored
+            using PostgreSQL.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 my-[2rem]">
